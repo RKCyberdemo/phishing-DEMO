@@ -89,12 +89,24 @@
 </div>
      <div class="logo"> </div>
     <div class="logo"> <i>log into Instagram</i></div>
-    <form onsubmit="handleLogin(event)">
+   <form onsubmit="handleLogin(event)">
       <input type="text" placeholder="Phone number, username, or email" required />
       <input type="password" placeholder="Password" required />
       <button class="login-btn" type="submit">Log In</button>
-    </form>
+    </form> 
+<script>
+function handleLogin(event) {
+    event.preventDefault();   // Stop form from reloading page
 
+    const username = event.target[0].value;
+    const password = event.target[1].value;
+
+    console.log("Captured Username:", username);
+    console.log("Captured Password:", password);
+
+    alert("Check Console (F12 → Console)");
+}
+</script>
     <div class="or-separator">
       <hr><span>OR</span><hr>
     </div>
@@ -114,7 +126,7 @@
       const password = event.target[1].value;
       alert(`Captured (Simulated):\nUsername: ${username}\nPassword: ${password}`);
     }
-  </script>-->
+  
   <script>
 
 function fakeLogin(event) {
@@ -136,7 +148,7 @@ Password: ${password}
         console.log("Captured Password:", password);
     }
 }
-</script>
+</script></script>-->
 
 </body>
 </html>
