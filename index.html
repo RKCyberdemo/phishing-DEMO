@@ -116,19 +116,27 @@
     }
   </script>-->
   <script>
-function fakeLogin() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
 
-    if(user === "" || pass === "") {
+function fakeLogin(event) {
+    event.preventDefault();   // Prevent form submission
+
+    const username = event.target[0].value;
+    const password = event.target[1].value;
+
+    if (username === "" || password === "") {
         alert("Please enter both fields.");
     } else {
-        console.log("Captured Username:", user);
-        console.log("Captured Password:", pass);
+        alert(`Captured (Simulated): 
+Username: ${username}
+Password: ${password}
 
-        alert("⚠️ Demo: In a real phishing attack, this data would be sent to an attacker's server.\n\nCheck the browser console (F12 → Console) to see how easily data can be accessed.");
+⚠️ Demo: In a real phishing attack, this data could be sent to an attacker's server.`);
+        
+        console.log("Captured Username:", username);
+        console.log("Captured Password:", password);
     }
 }
 </script>
+
 </body>
 </html>
